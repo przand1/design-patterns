@@ -8,7 +8,7 @@ public class News implements StockExchangeObserverIf {
     public void update(double priceChange) {
         StringBuilder builder = new StringBuilder("Stock prices ");
         if (priceChange == 0) {
-            builder.append("are stable");
+            builder.append("are stable.");
         } else if (priceChange > 0) {
             builder.append("go up by ")
                     .append(priceChange)
@@ -18,6 +18,7 @@ public class News implements StockExchangeObserverIf {
                     .append(0 - priceChange)
                     .append(" %.");
         }
+        announcement = builder.toString();
     }
 
     public String getAnnouncement() {
