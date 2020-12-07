@@ -11,12 +11,12 @@ public class News implements StockExchangeObserverIf {
             builder.append("are stable.");
         } else if (priceChange > 0) {
             builder.append("go up by ")
-                    .append(priceChange)
-                    .append(" %.");
+                    .append(Math.round(priceChange))
+                    .append("%.");
         } else {
-            builder.append(" go down by ")
-                    .append(0 - priceChange)
-                    .append(" %.");
+            builder.append("go down by ")
+                    .append(Math.round(0 - priceChange))
+                    .append("%.");
         }
         announcement = builder.toString();
     }

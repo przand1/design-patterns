@@ -26,7 +26,7 @@ public class StockExchange {
     }
 
     private double computePriceChange(double sharePrice, double newPrice) {
-        return (sharePrice - newPrice) / sharePrice * 100;
+        return (sharePrice - newPrice) / sharePrice * (-100);
     }
 
     private void notifyAllObservers(double priceChange) {

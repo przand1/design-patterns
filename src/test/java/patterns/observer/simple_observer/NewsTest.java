@@ -3,9 +3,9 @@ package patterns.observer.simple_observer;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class NewsTest {
+public class NewsTest {
 
     private StockExchange stockExchange;
     private News news;
@@ -20,6 +20,11 @@ class NewsTest {
     @Test
     void shouldAnnounceStable() {
         stockExchange.setSharePrice(10.0);
-        assertEquals("Prices are stable.", news.getAnnouncement());
+        assertEquals("Stock prices are stable.", news.getAnnouncement());
+    }
+    @Test
+    void shouldAnnouncePricesUpBy10Percent() {
+        stockExchange.setSharePrice(11.0);
+        assertEquals("Stock prices go up by 10%.", news.getAnnouncement());
     }
 }
