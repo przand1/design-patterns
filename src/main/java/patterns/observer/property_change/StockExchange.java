@@ -16,7 +16,7 @@ public class StockExchange {
         propertyChangeSupport.addPropertyChangeListener(PRICE_CHANGE,observer);
     }
     public void removeObserver(PropertyChangeListener observer) {
-        propertyChangeSupport.removePropertyChangeListener(observer);
+        propertyChangeSupport.removePropertyChangeListener(PRICE_CHANGE,observer);
     }
 
     public void setSharePrice(double newPrice) {
@@ -30,7 +30,7 @@ public class StockExchange {
     }
 
     private void notifyAllObservers(double priceChange) {
-        propertyChangeSupport.firePropertyChange(PRICE_CHANGE,0,computePriceChange(priceChange));
+        propertyChangeSupport.firePropertyChange(PRICE_CHANGE,0,priceChange);
     }
 
 }
