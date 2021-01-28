@@ -49,7 +49,6 @@ class StockExchangeTest {
         stockExchange.removeObserver(trader1);
         stockExchange.setSharePrice(99);
 
-
         assertNull(trader1.getAction());
         assertNotNull(trader2.getAction());
         assertNotNull(trader3.getAction());

@@ -1,7 +1,7 @@
 package patterns.observer.simple_observer;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 public class StockExchange {
 
@@ -9,7 +9,7 @@ public class StockExchange {
         sharePrice = initialSharePrice;
     }
 
-    private List<StockExchangeObserverIf> observers = new ArrayList<>();
+    private Set<StockExchangeObserverIf> observers = new HashSet<>();
     private double sharePrice;
 
     public void addObserver(StockExchangeObserverIf observer) {
@@ -20,12 +20,12 @@ public class StockExchange {
     }
 
     public void setSharePrice(double newPrice) {
-        double priceChangePercent = computePriceChange(sharePrice, newPrice);
+        double priceChangePercent = computePriceChange(newPrice);
         notifyAllObservers(priceChangePercent);
         sharePrice = newPrice;
     }
 
-    private double computePriceChange(double sharePrice, double newPrice) {
+    private double computePriceChange(double newPrice) {
         return (sharePrice - newPrice) / sharePrice * (-100);
     }
 
