@@ -1,9 +1,9 @@
-package patterns.observer.simple_observer;
+package patterns.observer.property_change;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 class NewsTest {
 

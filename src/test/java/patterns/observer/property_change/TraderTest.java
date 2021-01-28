@@ -1,4 +1,4 @@
-package patterns.observer.simple_observer;
+package patterns.observer.property_change;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

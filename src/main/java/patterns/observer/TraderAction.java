@@ -1,4 +1,4 @@
-package patterns.observer.simple_observer;
+package patterns.observer;
 
 public enum TraderAction {
     BUY,

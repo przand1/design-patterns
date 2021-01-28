@@ -1,13 +1,17 @@
-package patterns.observer.simple_observer;
+package patterns.observer.property_change;
 
 import patterns.observer.TraderAction;
 
-class Trader implements StockExchangeObserverIf {
+import java.beans.PropertyChangeEvent;
+import java.beans.PropertyChangeListener;
 
+public class Trader implements PropertyChangeListener {
     private TraderAction action;
 
     @Override
-    public void update(double priceChange) {
+    public void propertyChange(PropertyChangeEvent evt) {
+        double priceChange = (double) evt.getNewValue();
+
         if (priceChange > 0) {
             action = TraderAction.SELL;
         } else if (priceChange < 0) {
@@ -15,6 +19,7 @@ class Trader implements StockExchangeObserverIf {
         } else {
             action = TraderAction.HOLD;
         }
+
     }
 
     public TraderAction getAction() {
