@@ -12,4 +12,4 @@ Both implementations pass identical unit tests.
 
 ### Strategy
 This program extends previous example by introducing different trading strategies.
-`CautiousTrader` buys or sells only when price changes by at least 10%. `RiskyTrader` buys everything up to 4% rise, and sells when price rises by 8% or more.
+Trader with `CautiousTradingStrategy` buys or sells only when price changes by at least 10%. One with `RiskyTradingStrategy` buys everything up to 4% rise, and sells when price rises by 8% or more.
