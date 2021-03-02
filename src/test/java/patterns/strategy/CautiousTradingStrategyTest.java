@@ -7,7 +7,7 @@ import patterns.observer.property_change.StockExchange;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class TraderTest {
+class CautiousTradingStrategyTest {
     private StockExchange stockExchange;
     private Trader trader;
 
