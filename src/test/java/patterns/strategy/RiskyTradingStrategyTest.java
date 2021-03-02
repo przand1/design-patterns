@@ -33,4 +33,9 @@ class RiskyTradingStrategyTest {
         stockExchange.setSharePrice(103);
         assertEquals(TraderAction.BUY,trader.getAction());
     }
+    @Test
+    void TraderWithRiskyStrategyShouldBuyWhenRises4Percent() {
+        stockExchange.setSharePrice(104);
+        assertEquals(TraderAction.BUY,trader.getAction());
+    }
 }
