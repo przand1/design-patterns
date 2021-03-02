@@ -23,4 +23,9 @@ class RiskyTradingStrategyTest {
         stockExchange.setSharePrice(95);
         assertEquals(TraderAction.BUY,trader.getAction());
     }
+    @Test
+    void TraderWithRiskyStrategyShouldBuyWhenPriceIsStable() {
+        stockExchange.setSharePrice(100);
+        assertEquals(TraderAction.BUY,trader.getAction());
+    }
 }
