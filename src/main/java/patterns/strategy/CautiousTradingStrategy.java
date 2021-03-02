@@ -8,7 +8,7 @@ public class CautiousTradingStrategy implements TradingStrategyIf {
     public TraderAction chooseAction(double priceChange) {
         if (priceChange >= 10) {
             return TraderAction.SELL;
-        } else if (priceChange <= 10) {
+        } else if (priceChange <= -10) {
             return TraderAction.BUY;
         } else {
             return TraderAction.HOLD;
