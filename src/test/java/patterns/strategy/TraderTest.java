@@ -28,4 +28,9 @@ class TraderTest {
         stockExchange.setSharePrice(90);
         assertEquals(TraderAction.BUY,trader.getAction());
     }
+    @Test
+    void traderWithCautiousStrShouldHoldWhenPriceDrops9Percent() {
+        stockExchange.setSharePrice(91);
+        assertEquals(TraderAction.HOLD,trader.getAction());
+    }
 }
