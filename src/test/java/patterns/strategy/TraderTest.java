@@ -1,0 +1,26 @@
+package patterns.strategy;
+
+import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.Test;
+import patterns.observer.TraderAction;
+import patterns.observer.property_change.StockExchange;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+class TraderTest {
+    private StockExchange stockExchange;
+    private Trader trader;
+
+    @BeforeAll
+    void init() {
+        stockExchange = new StockExchange(100);
+        trader = new Trader(new CautiousTradingStrategy());
+        stockExchange.addObserver(trader);
+    }
+
+    @Test
+    void traderWithCautiousStrShouldBuyWhenPriceDrops15Percent() {
+        stockExchange.setSharePrice(85);
+        assertEquals(TraderAction.BUY,trader.getAction());
+    }
+}
