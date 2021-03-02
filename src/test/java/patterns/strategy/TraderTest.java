@@ -1,17 +1,17 @@
 package patterns.strategy;
 
-import org.junit.jupiter.api.BeforeAll;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import patterns.observer.TraderAction;
 import patterns.observer.property_change.StockExchange;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class TraderTest {
     private StockExchange stockExchange;
     private Trader trader;
 
-    @BeforeAll
+    @BeforeEach
     void init() {
         stockExchange = new StockExchange(100);
         trader = new Trader(new CautiousTradingStrategy());
