@@ -29,13 +29,33 @@ class RiskyTradingStrategyTest {
         assertEquals(TraderAction.BUY,trader.getAction());
     }
     @Test
-    void TraderWithRiskyStrategyShouldBuyWhenRises3Percent() {
+    void TraderWithRiskyStrategyShouldBuyWhenPriceRises3Percent() {
         stockExchange.setSharePrice(103);
         assertEquals(TraderAction.BUY,trader.getAction());
     }
     @Test
-    void TraderWithRiskyStrategyShouldBuyWhenRises4Percent() {
+    void TraderWithRiskyStrategyShouldBuyWhenPriceRises4Percent() {
         stockExchange.setSharePrice(104);
         assertEquals(TraderAction.BUY,trader.getAction());
+    }
+    @Test
+    void TraderWithRiskyStrategyShouldHoldWhenPriceRises5Percent() {
+        stockExchange.setSharePrice(105);
+        assertEquals(TraderAction.HOLD,trader.getAction());
+    }
+    @Test
+    void TraderWithRiskyStrategyShouldHoldWhenPriceRises7Percent() {
+        stockExchange.setSharePrice(107);
+        assertEquals(TraderAction.HOLD,trader.getAction());
+    }
+    @Test
+    void TraderWithRiskyStrategyShouldSellWhenPriceRises8Percent() {
+        stockExchange.setSharePrice(108);
+        assertEquals(TraderAction.SELL,trader.getAction());
+    }
+    @Test
+    void TraderWithRiskyStrategyShouldSellWhenPriceRises15Percent() {
+        stockExchange.setSharePrice(115);
+        assertEquals(TraderAction.SELL,trader.getAction());
     }
 }
